@@ -356,7 +356,6 @@ def choose_mitre(category):
 
     return mapping.get(category, (None, None))
 
-
 def generate_record(index):
     category = random.choice(THREAT_CATEGORIES)
 
@@ -385,9 +384,12 @@ def generate_record(index):
     )
 
     last_seen = first_seen + timedelta(
-        days=random.randint(0, 30),
+        days=random.randint(0, 20),
         hours=random.randint(0, 23),
     )
+
+    if last_seen > now:
+        last_seen = now
 
     threat_id = f"THR-2026-{index:04d}"
 
@@ -435,6 +437,8 @@ def generate_record(index):
         "mitre_technique_optional": mitre_technique or "",
         "cve_id_optional": cve_id,
     }
+
+
 
 
 def main():
