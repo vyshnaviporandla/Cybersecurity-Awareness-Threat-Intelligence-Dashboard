@@ -23,7 +23,7 @@ import {
   ClipboardCheck,
 } from "lucide-react";
 
-const API = "http://127.0.0.1:8000";
+const API= "https://cyber-threat-intelligence-api-ixtl.onrender.com";
 const REQUEST_TIMEOUT = 5000;
 
 /* =========================================================
